@@ -20,8 +20,8 @@
     <ul class="list-group">
         <c:forEach var="books" items="${bookslist}" varStatus="status">
             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <a href="/books/${books.id}" class="text-decoration-none">[${status.count}] ${books.title}</a>
-                <a href="/books/deleteBooks/${books.id}"><span class="badge bg-secondary">&times;</span></a>
+                <a href="${pageContext.request.contextPath}/books/${books.id}" class="text-decoration-none">[${status.count}] ${books.title}</a>
+                <a href="${pageContext.request.contextPath}/books/deleteBooks/${books.id}"><span class="badge bg-secondary">&times;</span></a>
             </li>
         </c:forEach>
     </ul>
@@ -35,7 +35,7 @@
     <button class="btn btn-outline-info mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#addForm" aria-expanded="false" aria-controls="addForm">도서 등록</button>
     <div class="collapse" id="addForm">
         <div class="card card-body">
-            <form method="post" action="/books" enctype="multipart/form-data">
+            <form method="post" action="${pageContext.request.contextPath}/books" enctype="multipart/form-data">
                 <label class="form-label">제목</label>
                 <input type="text" name="title" class="form-control">
                 <label class="form-label">이미지</label>
@@ -49,7 +49,7 @@
     <button class="btn btn-outline-info mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#updateForm" aria-expanded="false" aria-controls="updateForm">도서 수정</button>
     <div class="collapse" id="updateForm">
         <div class="card card-body">
-            <form method="post" action="/books/update" enctype="multipart/form-data">
+            <form method="post" action="${pageContext.request.contextPath}/books/update" enctype="multipart/form-data">
                 <label class="form-label">도서 번호</label>
                 <input type="text" name="id" class="form-control">
                 <label class="form-label">제목</label>

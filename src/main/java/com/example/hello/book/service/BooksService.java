@@ -2,6 +2,8 @@ package com.example.hello.book.service;
 
 import com.example.hello.book.entity.Books;
 import com.example.hello.book.repository.BooksRepository;
+import com.example.hello.book.repository.BooksRepositoryImpl;
+import com.example.hello.book.repository.NotOrmBooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,13 @@ public class BooksService {
     public BooksService(final BooksRepository booksRepository) {
         this.booksRepository = booksRepository;
     }
+
+//    private final NotOrmBooksRepository booksRepository;
+//
+//    @Autowired
+//    public BooksService(final NotOrmBooksRepository booksRepositoryImpl) {
+//        this.booksRepository = booksRepositoryImpl;
+//    }
 
     @Transactional(readOnly = true)
     public List<Books> getBooks() {

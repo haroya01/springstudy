@@ -16,6 +16,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <junit.version>5.9.2</junit.version>
         <org.springframework-version> 5.2.25.RELEASE </org.springframework-version>
+        <tomcat.version>8.5.100</tomcat.version>
     </properties>
 
     <dependencies>
@@ -110,6 +111,25 @@
 <!--            <artifactId>spring-orm</artifactId>-->
 <!--            <version>${org.springframework-version}</version>-->
 <!--        </dependency>-->
+
+
+        <!-- Tomcat Embedded dependencies -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-websocket</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+
 
     </dependencies>
 

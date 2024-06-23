@@ -1,11 +1,12 @@
 package com.example.hello;
 
+
 import com.example.hello.config.DispatcherConfig;
+import com.example.hello.config.JdbcTemplateConfig;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.FilterRegistration;
@@ -21,7 +22,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(RootConfig.class);
+        rootContext.register(RootConfig.class, JdbcTemplateConfig.class);
 
         ContextLoaderListener listener = new ContextLoaderListener(rootContext);
         servletContext.addListener(listener);

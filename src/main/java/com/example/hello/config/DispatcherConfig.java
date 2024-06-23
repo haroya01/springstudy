@@ -1,17 +1,14 @@
 package com.example.hello.config;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
 
 @Configuration
-@ComponentScan(basePackages = "com.example.hello.book")
+@ComponentScan///(basePackages = "com.example.hello.book")
 @EnableWebMvc
 public class DispatcherConfig implements WebMvcConfigurer {
 
